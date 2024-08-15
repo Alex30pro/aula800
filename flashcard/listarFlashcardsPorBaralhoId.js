@@ -1,10 +1,13 @@
 let {flashcard} = require('../data');
 
-function listarFlashcardsPorBaralhoId() {
-    flashcard.forEach((flash) => {
-    const index = flash.filter(flash => flash.idBaralho === idBaralho);   
-    console.log(`ID: ${flash.id} , Pergunta: ${flash.pergunta}, Resposta: ${flash.resposta}, ID do baralho: ${flash.idBaralho}`);
-    });
-};
+function listarFlashcardsPorBaralhoId(idBaralho) {
+    let filtro = flashcard.filter(verificar => verificar.id == idBaralho)
 
-    module.exports =    listarFlashcardsPorBaralhoId;
+        filtro.forEach(flashcards => 
+            console.log(`
+            ID: ${flashcards.id} -Pergunta: ${flashcards.pergunta} -Resposta: ${flashcards.resposta}
+            `)
+        )
+}
+
+    module.exports = listarFlashcardsPorBaralhoId;

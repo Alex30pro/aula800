@@ -29,7 +29,6 @@ function mainMenu(){
     8. Deletar Baralho
     9. Deletar Flashcard
     10. Buscar Flashcards por Pergunta
-    11. Buscar Flashcards por Baralho
     0. Sair
     `)
     
@@ -60,8 +59,8 @@ function mainMenu(){
             mainMenu();
             break;
         case '5':
-            listarFlashcardPorBaralhoId();
-            idBaralho = prompt('Digite o número do id do flashcard que deseja procurar: ');
+            id = prompt('Digite o número do id do flashcard que deseja procurar: ');
+            listarFlashcardPorBaralhoId(id)
             mainMenu();
             break;
         case '6':
@@ -96,13 +95,8 @@ function mainMenu(){
             mainMenu();
             break;
         case '10':
-            buscarFlashcardsPorPergunta();
-            pergunta = prompt('Digite o número do id do flashcard que deseja procurar: ');
-            mainMenu();
-            break;
-        case '11':
-            buscarFlashcardsPorBaralho();
-            id = prompt('Digite o número do id do flashcard que deseja procurar: ');    
+            index = prompt('Qual a pergunta voce deseja buscar?: ');
+            buscarFlashcardsPorPergunta(index);
             mainMenu();
             break;
         case '0':
